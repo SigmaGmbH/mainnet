@@ -2,10 +2,10 @@
 
 ## Instruction
 
-This document is written for  Genesis Validators, and if you are selected a Genesis Validator participant, please be sure to double check your gentx submission deadline and the starting time of the Swisstronik mainnet. In order to submit your gentx file to the Swisstronik team, please do so after updating your binary file to the most recent version. ‘Deadline’ and the ‘Mainnet Launch’ schedule is as follows.
+This document is written for Genesis Validators, and if you are selected a Genesis Validator participant, please be sure to double check your gentx submission deadline and the starting time of the Swisstronik mainnet. In order to submit your gentx file to the Swisstronik team, please do so after updating your binary file to the most recent version. ‘Deadline’ and the ‘Mainnet Launch’ schedule is as follows.
 
-* _**Mainnet will launch on 01/04/2025 14:00 UTC.**_
-* _**The deadline to submit your gentx is 25/03/2025 14:00 UTC.**_
+* _**Mainnet will launch on 10/04/2025 14:00 UTC.**_
+* _**The deadline to submit your gentx is 09/04/2025 18:00 UTC.**_
 
 _\* To submit your gentx file to the Swisstronik team, please follow the steps listed below._
 
@@ -22,7 +22,7 @@ If you previously did not operate the node or you're working on new machine, set
 ### Download Swisstronik most recent binary file.
 
 ```
-wget https://github.com/SigmaGmbH/swisstronik-chain/releases/download/testnet-v1.0.7/swisstronikd.zip
+wget https://github.com/SigmaGmbH/swisstronik-chain/releases/download/mainnet-v1.0.0/swisstronikd.zip
 ```
 
 Unpack downloaded archive and configure your node as described in docs: https://docs.swisstronik.com/swisstronik-docs/node-setup/setup-node/configure-node
@@ -39,7 +39,7 @@ sudo mv ~/swisstronikd /usr/local/bin/swisstronikd
 ### Initialize(Reset) your Swisstronik node folder using the command provided below.
 
 ```
-swisstronikd init <your_moniker_name> --chain-id swisstronik_1291-1
+swisstronikd init <your_moniker_name> --chain-id swisstronik_1848-1
 ```
 
 ### Retrieve your wallet using your mnemonic.
@@ -68,16 +68,16 @@ swisstronikd keys add <key_name>
 ### Register Genesis account
 
 ```
-swisstronikd add-genesis-account <your_wallet_address> 10000000aswtr
+swisstronikd add-genesis-account <your_wallet_address> 1000swtr
 ```
 
-_**\* When registering a genesis account, for the amount field, you MUST enter 10000000aswtr.**_\
+_**\* When registering a genesis account, for the amount field, you MUST enter 1000swtr.**_\
 &#x20;  _**If a different amount was put in, please start again by resetting your folder.**_
 
 ### Create gentx file (★)
 
 ```
-swisstronikd gentx <key_name> 10000000aswtr --chain-id swisstronik_1291-1
+swisstronikd gentx <key_name> 1000swtr --chain-id swisstronik_1848-1
 --commission-rate 0.1
 --commission-max-rate 0.2
 --commission-max-change-rate 0.01
@@ -118,7 +118,7 @@ If all of the above steps were completed without any error, you will be able to 
         },
         "value": {
           "denom": "aswtr",
-          "amount": "10000000"
+          "amount": "1000000000000000000000"
         }
       }
     ],
