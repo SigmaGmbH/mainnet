@@ -22,10 +22,10 @@ If you previously did not operate the node or you're working on new machine, set
 ### Download Swisstronik most recent binary file.
 
 ```
-wget https://github.com/SigmaGmbH/swisstronik-chain/releases/download/mainnet-v1.0.0/swisstronikd.zip
+wget https://github.com/SigmaGmbH/swisstronik-chain/releases/download/v1.0.0-mainnet/swisstronikd.zip
 ```
 
-Unpack downloaded archive and configure your node as described in docs: https://docs.swisstronik.com/swisstronik-docs/node-setup/setup-node/configure-node
+Unpack downloaded archive and configure your node as described in docs: https://docs.swisstronik.com/swisstronik-docs/node-setup/setup-mainnet-node
 
 ### Check the binary build version and the integrity before setting global command.
 
