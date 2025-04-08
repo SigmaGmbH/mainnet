@@ -196,4 +196,4 @@ cp -r swisstronik-bak $HOME/.swisstronik
 ### Create pull request
 
 You must submit the gentx file to the Swisstronik team as a pull request to the https://github.com/SigmaGmbH/mainnet/tree/main/gentxs/ directory.\
-_**\* Please change the file name to "vaildator\_name.json" and submit it.**_
+_**\* Please change the file name to "validator\_name.json" and submit it.**_
