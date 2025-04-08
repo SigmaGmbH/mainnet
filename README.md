@@ -155,6 +155,23 @@ If all of the above steps were completed without any error, you will be able to 
 }
 ```
 
+### Double check that you're setup is working
+
+1. Backup your `.swisstronik` directory. By default it is located at `$HOME/.swisstronik`
+```sh
+cp -r $HOME/.swisstronik swisstronik-bak
+
+2. Start the chain:
+```sh
+swisstronikd start
+```
+
+3. After you're confirmed that chain is running and you are validator, remove `.swisstronik` directory and restore old one from backup:
+```sh
+rm -r $HOME/.swisstronik
+cp -r $HOME/swisstronik-bak .swisstronik
+```
+
 ### Create pull request
 
 You must submit the gentx file to the Swisstronik team as a pull request to the https://github.com/SigmaGmbH/mainnet/tree/main/gentxs/ directory.\
