@@ -30,8 +30,8 @@ Unpack downloaded archive and configure your node as described in docs: https://
 ### Check the binary build version and the integrity before setting global command.
 
 ```
-./swisstronikd version
-sha256sum ./swisstronikd
+./swisstronikd version --long # Should have v1.0.0 version and ca0a97802847ac3978a569b2d9c91a96bc4376e5 commit
+sha256sum ./swisstronikd # Should be 21a81717d5c3d8f620a940b45d4ee273cd4ff98e460b6729e12f22cf05d15730
 
 sudo mv ~/swisstronikd /usr/local/bin/swisstronikd
 ```
