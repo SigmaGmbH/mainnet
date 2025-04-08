@@ -31,7 +31,7 @@ Unpack downloaded archive and configure your node as described in docs: https://
 
 ```
 ./swisstronikd version
-sha1sum ./swisstronikd
+sha256sum ./swisstronikd
 
 sudo mv ~/swisstronikd /usr/local/bin/swisstronikd
 ```
@@ -78,12 +78,12 @@ _**\* When registering a genesis account, for the amount field, you MUST enter 1
 
 ```
 swisstronikd gentx <key_name> 1000swtr --chain-id swisstronik_1848-1
---commission-rate 0.1
---commission-max-rate 0.2
---commission-max-change-rate 0.01
---moniker <moniker_name>
---website <website_link>
---details <description>
+--commission-rate 0.1 \
+--commission-max-rate 0.2 \
+--commission-max-change-rate 0.01 \
+--moniker <moniker_name> \
+--website <website_link> \
+--details <description> \
 --security-contact <email>
 ```
 
@@ -160,16 +160,37 @@ If all of the above steps were completed without any error, you will be able to 
 1. Backup your `.swisstronik` directory. By default it is located at `$HOME/.swisstronik`
 ```sh
 cp -r $HOME/.swisstronik swisstronik-bak
+```
 
-2. Start the chain:
+2. Collect gentxs
+```sh
+swisstronikd collect-gentxs
+```
+
+3. Replace all usages of `stake` denom to `aswtr`
+```sh
+nano $HOME/.swisstronik/config/genesis.json
+```
+
+4. Validate genesis
+```sh
+swisstronikd validate-genesis
+```
+
+5. Set min gas price in app.toml
+```sh
+nano $HOME/.swisstronik/config/app.toml
+```
+
+6. Start the chain:
 ```sh
 swisstronikd start
 ```
 
-3. After you're confirmed that chain is running and you are validator, remove `.swisstronik` directory and restore old one from backup:
+5. After you're confirmed that chain is running and you are validator, remove `.swisstronik` directory and restore old one from backup:
 ```sh
 rm -r $HOME/.swisstronik
-cp -r $HOME/swisstronik-bak .swisstronik
+cp -r swisstronik-bak $HOME/.swisstronik
 ```
 
 ### Create pull request
